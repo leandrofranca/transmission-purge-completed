@@ -16,7 +16,7 @@ do
         /storage/.kodi/addons/service.transmission/bin/transmission-remote --torrent $TORRENTID --remove-and-delete
         ( sleep 1m ; \
             rm -rf "/media/sda-usb-Mass_Storage_Dev/downloads/$DL_NAME"
-            curl --data-binary '{ "jsonrpc": "2.0", "method": "VideoLibrary.Scan", "id": "mybash"}' -H 'content-type: application/json;' http://192.168.31.40:8080/
+            curl --data-binary '{ "jsonrpc": "2.0", "method": "VideoLibrary.Scan", "id": "mybash"}' -H 'content-type: application/json;' http://localhost:8080/
         ) &
     elif [ "$DL_MOVED" != "" ]; then
         echo "Torrent $DL_NAME is broken. Restarting..."
